@@ -1,16 +1,75 @@
-# React + Vite
+# AXiA – AI-Powered Exoplanet Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+**AXiA** is an innovative interactive web platform that transforms **NASA exoplanet data from TESS and Kepler** into **educational, engaging, and AI-generated insights**. The project addresses a key challenge: making complex astronomical data **accessible and understandable to the general public**, while demonstrating how AI can enhance **science communication and education**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Overview
 
-## Expanding the ESLint configuration
+AXiA allows users to select any exoplanet from a dynamic dropdown menu. Upon selection, the platform generates a **natural-language description** of the planet's characteristics, including:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Radius  
+- Orbital period  
+- Transit duration  
+- Potential habitability  
+
+These descriptions are produced in real-time using **Mistral AI**, which interprets raw data and converts it into **simplified, scientifically accurate, and educational narratives**. Sequential “scanning” messages create an immersive experience, simulating the process of **analyzing exoplanets like a professional astronomer**.
+
+
+
+## Problem Solved & Innovation
+
+Raw NASA exoplanet datasets are **dense and technical**, making them difficult for non-specialists to understand. AXiA solves this problem by:
+
+1. Using **AI to generate accessible educational content**, allowing users to quickly grasp complex astronomical concepts.  
+2. Providing **interactive visualizations and animations** to enhance engagement.  
+3. Offering **real-time, tailored descriptions** for each exoplanet, increasing curiosity and learning.  
+
+The innovative aspect lies in the combination of **AI-driven text generation, real astronomical data, and interactive design**. AXiA transforms static data into a **dynamic, educational, and enjoyable learning experience**.
+
+
+
+## Use of Artificial Intelligence
+
+AXiA uses Mistral AI exclusively for generating educational, plain-language descriptions of exoplanets based on NASA TESS and Kepler datasets.
+	•	All AI-generated text is clearly labeled in the UI.
+	•	AI is not used to modify NASA branding or copyrighted material.
+	•	AI enables real-time, personalized descriptions, making technical data understandable and engaging.
+
+This ensures transparency and compliance with NASA Space Apps Challenge rules.
+
+
+
+## Educational Impact & Benefits
+
+- Makes complex astronomical data accessible to students and the public.
+- Serves as a teaching tool for STEM education and classroom demos.
+- Encourages curiosity and exploration of space science through interactive experiences.
+- Demonstrates how AI can bridge the gap between raw scientific data and public understanding.
+
+
+## 🛠 Technologies
+
+- **Frontend:** JavaScript, HTML, CSS  
+- **Backend:** Python + FastAPI for API endpoints  
+- **AI:** Mistral AI for generating natural-language exoplanet descriptions  
+- **Data sources:** NASA TESS and Kepler datasets  
+
+---
+
+## ⚡ Installation & Run
+
+1. Clone the repository:
+```bash
+git clone https://github.com/mohsine92/AXia-NASA-Hackhathon.git
+cd AXia-NASA-Hackhathon
+python3 server.py
+```
+
+<img width="3360" height="1914" alt="Capture d’écran 2025-10-05 à 23 15 02" src="https://github.com/user-attachments/assets/4cb5b6dc-f66a-422a-9a09-58f992c14bb2" />
+<img width="3360" height="1914" alt="Capture d’écran 2025-10-05 à 22 59 09" src="https://github.com/user-attachments/assets/611c8e89-807f-4ef6-a259-bbef699daab7" />
+<img width="3360" height="1914" alt="Capture d’écran 2025-10-05 à 22 59 09" src="https://github.com/user-attachments/assets/47dd17ab-89a1-4ba4-b7c5-8a0668c1f67f" />
+<img width="3360" height="1914" alt="Capture d’écran 2025-10-05 à 23 12 01" src="https://github.com/user-attachments/assets/073aa78a-a9aa-474c-b742-fa6e1cb09aeb" />
+
+
