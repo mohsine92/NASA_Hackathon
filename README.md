@@ -1,8 +1,9 @@
 # AXiA – NASA International Spaces Apps Challenge
 
 <img width="900" height="600" alt="nasa-hackathon (1)" src="https://github.com/user-attachments/assets/b858f9e6-17b3-482c-a04e-0c84d00a3fda" />
+<img width="900" height="800" src= "https://github.com/user-attachments/assets/5b2d2dd0-4129-4dff-a3cc-3bcdc3a01703" />
 
----
+----
 **AXiA** is an innovative interactive web platform that transforms **NASA exoplanet data from TESS and Kepler** into **educational, engaging, and AI-generated insights**. The project addresses a key challenge: making complex astronomical data **accessible and understandable to the general public**, while demonstrating how AI can enhance **science communication and education**.
 
 
