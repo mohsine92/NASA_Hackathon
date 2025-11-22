@@ -70,9 +70,7 @@ cd AXia-NASA-Hackhathon
 python3 server.py
 ```
 
-<img width="3360" height="1914" alt="Capture d’écran 2025-10-05 à 23 15 02" src="https://github.com/user-attachments/assets/4cb5b6dc-f66a-422a-9a09-58f992c14bb2" />
-<img width="3360" height="1914" alt="Capture d’écran 2025-10-05 à 22 59 09" src="https://github.com/user-attachments/assets/611c8e89-807f-4ef6-a259-bbef699daab7" />
-<img width="3360" height="1914" alt="Capture d’écran 2025-10-05 à 22 59 09" src="https://github.com/user-attachments/assets/47dd17ab-89a1-4ba4-b7c5-8a0668c1f67f" />
-<img width="3360" height="1914" alt="Capture d’écran 2025-10-05 à 23 12 01" src="https://github.com/user-attachments/assets/073aa78a-a9aa-474c-b742-fa6e1cb09aeb" />
+<img width="auto" height="auto" alt="Capture d’écran 2025-10-05 à 23 15 02" src="https://github.com/user-attachments/assets/4cb5b6dc-f66a-422a-9a09-58f992c14bb2" />
+<img width="auto" height="auto" alt="Capture d’écran 2025-10-05 à 23 12 01" src="https://github.com/user-attachments/assets/073aa78a-a9aa-474c-b742-fa6e1cb09aeb" />
 
 
