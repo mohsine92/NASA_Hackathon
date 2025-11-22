@@ -65,8 +65,8 @@ This ensures transparency and compliance with NASA Space Apps Challenge rules.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/mohsine92/AXia-NASA-Hackhathon.git
-cd AXia-NASA-Hackhathon
+git clone https://github.com/mohsine92/Nasa-Hackhathon.git
+cd Nasa-Hackhathon
 python3 server.py
 ```
 
