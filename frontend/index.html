@@ -7,21 +7,24 @@
 <link rel="shortcut icon" href="https://i.pinimg.com/1200x/ea/1c/57/ea1c57807ad88e98c0398880ef29bd3d.jpg" type="image/x-icon">
 </head>
 <body>
-
-  
 <header>
   <div class="selector-box" style="max-width:600px;margin:50px auto; border: 1px solid rgba(226, 226, 226, 0.323); border-radius: 30px; padding: 50px; background-color: rgba(240, 248, 255, 0.894);">
     <h1>AXiA</h1>
     <p>Every world tells story. <br>Select an exoplanet and let the AI decode its secrets.</p>
-    
-    <select id="planet-select">
-        <option value="">Select an exoplanet</option>
-      </select>
-      
-      <div id="planet-description" style="margin-top:20px;white-space:pre-wrap;"></div>
 
-<div id="overlay">
-</div>
+    <div style="margin-bottom: 15px;">
+      <button id="filter-all" class="filter-btn active" onclick="filterMission('all')">All</button>
+      <button id="filter-tess" class="filter-btn" onclick="filterMission('TESS')">TESS</button>
+      <button id="filter-kepler" class="filter-btn" onclick="filterMission('Kepler')">Kepler</button>
+    </div>
+
+    <select id="planet-select">
+      <option value="">Select an exoplanet</option>
+    </select>
+
+    <div id="planet-description" style="margin-top:20px;white-space:pre-wrap;"></div>
+    <div id="overlay"></div>
+  </div>
 </div>
 <script src="main.js"></script>
 </body>

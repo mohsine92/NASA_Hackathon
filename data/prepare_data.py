@@ -1,26 +1,34 @@
 import pandas as pd
-import json
 
-def prepare_data():
-    # Lire le CSV déjà préparé
-    df = pd.read_csv("data/prepared_exoplanets.csv")
-    
-    # Remplacer les valeurs NaN par 0
-    df = df.fillna(0)
+# TESS
+tess = pd.read_csv('data/prepared_exoplanets.csv')
+tess['name'] = tess['toi'].apply(lambda x: f"TOI-{x}")
+tess['source'] = 'TESS'
+tess_clean = tess[['name', 'pl_rade', 'pl_orbper', 'pl_trandurh', 'source']].rename(columns={
+    'pl_rade': 'radius',
+    'pl_orbper': 'period',
+    'pl_trandurh': 'duration'
+})
 
-    # Ajouter une colonne source si elle n'existe pas
-    if "source" not in df.columns:
-        df["source"] = "unknown"
+# Kepler
+kepler = pd.read_csv('data/kepler.csv', comment='#')
+kepler['name'] = kepler.apply(
+    lambda r: r['kepler_name'] if pd.notna(r['kepler_name']) else r['kepoi_name'], axis=1
+)
+kepler['source'] = 'Kepler'
+kepler_clean = kepler[['name', 'koi_prad', 'koi_period', 'koi_duration', 'source']].rename(columns={
+    'koi_prad': 'radius',
+    'koi_period': 'period',
+    'koi_duration': 'duration'
+})
 
-    # Garder les colonnes essentielles
-    df = df[["toi", "pl_rade", "pl_orbper", "pl_trandurh", "source"]]
+# Fusion
+combined = pd.concat([tess_clean, kepler_clean], ignore_index=True)
+combined = combined.dropna(subset=['radius', 'period', 'duration'])
+combined = combined.drop_duplicates(subset=['name'])
 
-    # Convertir en JSON
-    planets = df.to_dict(orient="records")
-    with open("data/planets.json", "w") as f:
-        json.dump(planets, f, indent=4)
+print(f"Total: {len(combined)} exoplanètes")
+print(combined.head(5))
 
-    print("planets.json généré avec succès !")
-
-if __name__ == "__main__":
-    prepare_data()
+combined.to_csv('data/combined_exoplanets.csv', index=False)
+print("Saved to data/combined_exoplanets.csv")

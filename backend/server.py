@@ -3,6 +3,7 @@ from generate_text import generate_planet_description
 from config import MAX_PLANETS
 import pandas as pd
 import os
+from flask import Flask, jsonify, send_from_directory, request
 
 BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
 FRONTEND_DIR = os.path.join(os.path.dirname(BACKEND_DIR), "frontend")
@@ -21,12 +22,14 @@ def index():
 
 @app.route("/planets")
 def planets():
-    planets_data = df[["toi", "pl_rade", "pl_orbper", "pl_trandurh", "pl_trandeplim"]].head(MAX_PLANETS).to_dict(orient="records")
+    limit = request.args.get('limit', 100, type=int)
+    df = pd.read_csv(os.path.join(os.path.dirname(BACKEND_DIR), "data", "combined_exoplanets.csv"))
+    planets_data = df[['name', 'radius', 'period', 'duration', 'source']].head(limit).to_dict(orient='records')
     return jsonify(planets_data)
 
-@app.route("/description/<toi>")
-def description(toi):
-    desc = generate_planet_description(toi)
+@app.route("/description/<path:name>")
+def description(name):
+    desc = generate_planet_description(name)
     return jsonify({"description": desc})
 
 @app.route("/<path:path>")

@@ -1,5 +1,5 @@
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MAX_PLANETS = 50
-DATA_PATH = os.path.join(BASE_DIR, "frontend", "planets.json")
+MAX_PLANETS = 100
+DATA_PATH = os.path.join(BASE_DIR, "data", "combined_exoplanets.csv")
