@@ -1,15 +1,30 @@
-from flask import Flask, jsonify, send_from_directory
-from generate_text import generate_planet_description, get_planets_list
+from flask import Flask, jsonify, send_from_directory, render_template_string
+from backend.generate_text import generate_planet_description
+import pandas as pd
+from backend.config import MAX_PLANETS
+import os
 
-app = Flask(__name__, static_folder="frontend")
+# Obtenir le chemin absolu du répertoire backend
+BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
+FRONTEND_DIR = os.path.join(os.path.dirname(BACKEND_DIR), "frontend")
+
+app = Flask(__name__, static_folder=FRONTEND_DIR, static_url_path="")
+
+# Charger les données préparées
+df = pd.read_csv("data/prepared_exoplanets.csv")
 
 @app.route("/")
 def index():
-    return send_from_directory("frontend", "index.html")
+    index_path = os.path.join(FRONTEND_DIR, "index.html")
+    if os.path.exists(index_path):
+        with open(index_path, 'r', encoding='utf-8') as f:
+            return f.read()
+    return {"error": "index.html not found"}, 404
 
 @app.route("/planets")
 def planets():
-    return jsonify(get_planets_list())
+    planets_data = df[['toi', 'pl_rade', 'pl_orbper', 'pl_trandurh', 'pl_trandeplim']].head(MAX_PLANETS).to_dict(orient='records')
+    return jsonify(planets_data)
 
 @app.route("/description/<toi>")
 def description(toi):
@@ -21,4 +36,4 @@ def static_proxy(path):
     return send_from_directory("frontend", path)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8000)
+    app.run(host='0.0.0.0', port=5000, debug=True)

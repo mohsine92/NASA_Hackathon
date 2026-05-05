@@ -36,6 +36,7 @@ Raw NASA exoplanet datasets are dense and technical, making them difficult for n
 ## ⚡ Installation & Run
 
 ### Prerequisites
+
 - Python 3.12+
 - [Ollama](https://ollama.com) installed and running
 
@@ -54,6 +55,7 @@ Then open your browser at `http://localhost:5000`
 ---
 
 ## Project Structure
+
 ```
 NASA_Hackathon/
 ├── backend/
@@ -73,6 +75,7 @@ NASA_Hackathon/
 ├── requirements.txt
 └── README.md
 ```
+
 ---
 
 ## Educational Impact

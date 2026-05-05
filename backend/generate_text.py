@@ -1,13 +1,11 @@
-import json
-from mistral_client import get_mistral_response
-from config import MAX_PLANETS, DATA_PATH
+import pandas as pd
+from backend.mistral_client import get_mistral_response
+from backend.config import MAX_PLANETS
 
 def get_planets_list():
     try:
-        with open(DATA_PATH) as f:
-            planets = json.load(f)
-        planets_sorted = sorted(planets, key=lambda p: float(p["toi"]))
-        return planets_sorted[:MAX_PLANETS]
+        df = pd.read_csv("data/prepared_exoplanets.csv")
+        return df[['toi', 'pl_rade', 'pl_orbper', 'pl_trandurh', 'pl_trandeplim']].head(MAX_PLANETS).to_dict(orient='records')
     except Exception as e:
         print("Erreur lors du chargement des planètes :", e)
         return []

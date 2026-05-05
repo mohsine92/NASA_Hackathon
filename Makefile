@@ -1,8 +1,8 @@
 run:
-python3 backend/server.py
+	python3 run.py
 
 install:
-pip install -r requirements.txt
+	pip install -r requirements.txt
 
 pull-model:
-ollama pull mistral
+	ollama pull mistral
