@@ -1,7 +1,9 @@
 # AXiA – Exoplanet Explorer | NASA International Space Apps Challenge 2025
 
-<img width="900" height="600" alt="nasa-hackathon (1)" src="https://github.com/user-attachments/assets/b858f9e6-17b3-482c-a04e-0c84d00a3fda" />
-<img width="900" height="800" src="https://github.com/user-attachments/assets/5b2d2dd0-4129-4dff-a3cc-3bcdc3a01703" />
+<div align="center">
+  <img width="700" height="auto" alt="banner_nasa_hackh" src="https://github.com/user-attachments/assets/733166eb-c4f5-4905-943f-a81f08eb9707" />
+  <img width="700" height="auto" src="https://github.com/user-attachments/assets/5b2d2dd0-4129-4dff-a3cc-3bcdc3a01703" />
+</div>   
 
 ---
 
@@ -19,7 +21,7 @@ Raw NASA exoplanet datasets are dense and technical, making them difficult for n
 
 1. User selects an exoplanet from a dynamic dropdown menu
 2. The backend retrieves its physical data from NASA TESS/Kepler datasets
-3. A prompt is constructed and sent to **Mistral AI via Ollama** (local LLM inference)
+3. A prompt is constructed and sent to **MGroq**
 4. A real-time educational description is generated and displayed
 
 ---
@@ -28,7 +30,7 @@ Raw NASA exoplanet datasets are dense and technical, making them difficult for n
 
 - **Frontend:** JavaScript, HTML, CSS
 - **Backend:** Python + Flask
-- **AI:** Mistral AI via Ollama (local LLM inference)
+- **AI:** Groq
 - **Data sources:** NASA TESS (~1,000+ entries) + Kepler (~16,000+ entries)
 
 ---
@@ -38,7 +40,6 @@ Raw NASA exoplanet datasets are dense and technical, making them difficult for n
 ### Prerequisites
 
 - Python 3.12+
-- [Ollama](https://ollama.com) installed and running
 
 ### Steps
 
@@ -46,8 +47,7 @@ Raw NASA exoplanet datasets are dense and technical, making them difficult for n
 git clone https://github.com/mohsine92/NASA_Hackathon.git
 cd NASA_Hackathon
 pip install -r requirements.txt
-ollama pull mistral
-make run
+python3 backend/server.py
 ```
 
 Then open your browser at `http://localhost:5000`
@@ -89,7 +89,7 @@ NASA_Hackathon/
 
 ## AI Compliance
 
-AXiA uses Mistral AI exclusively for generating educational descriptions based on NASA data. All AI-generated text is clearly labeled in the UI. AI is not used to modify NASA branding or copyrighted material.
+AXiA uses Groq exclusively for generating educational descriptions based on NASA data. All AI-generated text is clearly labeled in the UI. AI is not used to modify NASA branding or copyrighted material.
 
 ---
 
