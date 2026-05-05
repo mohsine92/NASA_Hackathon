@@ -21,15 +21,17 @@ def generate_planet_description(name):
             return "Planète non trouvée."
         planet = row.iloc[0]
         prompt = (
-            f"Provide a complete and accessible description of exoplanet {planet['name']} "
-            f"from the {planet['source']} mission. "
-            f"Radius: {planet['radius']} Earth radii, "
-            f"orbital period: {planet['period']} days, "
-            f"transit duration: {planet['duration']} hours. "
-            "Explain its physical characteristics, orbital conditions, and implications "
-            "for composition, potential climate, and habitability. "
-            "Make it educational and engaging for students and astronomy enthusiasts. "
-            "Reply in English."
+            f"You are an astronomy educator. Based ONLY on the following confirmed data from the {planet['source']} mission, "
+            f"describe exoplanet {planet['name']} in an educational and engaging way for the general public. "
+            f"DO NOT add any information not provided below. DO NOT invent mass, constellation, star type, or distance. "
+            f"Only use these facts:\n"
+            f"- Radius: {planet['radius']} Earth radii\n"
+            f"- Orbital period: {planet['period']} days\n"
+            f"- Transit duration: {planet['duration']} hours\n"
+            f"- Mission: {planet['source']}\n\n"
+            f"Explain what these measurements tell us about the planet's size, year length, and what we can infer "
+            f"about its potential composition and conditions. Be clear about what is known vs what is inferred. "
+            f"Reply in french."
         )
         description = get_mistral_response(prompt)
         if not description:
