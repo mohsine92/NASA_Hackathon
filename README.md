@@ -46,7 +46,7 @@ git clone https://github.com/mohsine92/NASA_Hackathon.git
 cd NASA_Hackathon
 pip install -r requirements.txt
 ollama pull mistral
-python3 server.py
+make run
 ```
 
 Then open your browser at `http://localhost:5000`
@@ -56,16 +56,20 @@ Then open your browser at `http://localhost:5000`
 ## Project Structure
 ```
 NASA_Hackathon/
+├── backend/
+│   ├── server.py
+│   ├── generate_text.py
+│   ├── mistral_client.py
+│   ├── prepare_frontend_data.py
+│   └── config.py
 ├── frontend/
 │   ├── index.html
 │   ├── main.js
 │   ├── style.css
 │   └── planets.json
 ├── data/
-├── server.py
-├── generate_text.py
-├── mistral_client.py
-├── prepare_frontend_data.py
+├── .env.example
+├── Makefile
 ├── requirements.txt
 └── README.md
 ```
