@@ -1,11 +1,10 @@
 import json
 from mistral_client import get_mistral_response
-
-MAX_PLANETS = 50
+from config import MAX_PLANETS, DATA_PATH
 
 def get_planets_list():
     try:
-        with open("frontend/planets.json") as f:
+        with open(DATA_PATH) as f:
             planets = json.load(f)
         planets_sorted = sorted(planets, key=lambda p: float(p["toi"]))
         return planets_sorted[:MAX_PLANETS]
